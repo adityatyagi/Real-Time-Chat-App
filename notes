@@ -1,0 +1,9 @@
+THINGS TO REMEMBER
+
+1. socket.io is a server that integrates with the NodeJS HTTP server or mounts on the NodeJS HTTP server.
+2. Socket.IO is composed of two parts:
+
+A server that integrates with (or mounts on) the Node.JS HTTP Server: socket.io
+A client library that loads on the browser side: socket.io-client
+
+3. Remove blank messages

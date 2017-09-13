@@ -5,6 +5,7 @@ var http = require('http').Server(app);
 // initialize a new instance of socket.io by passing the http (the HTTP server) object.
 var io = require('socket.io')(http);
 
+app.set('port', (process.env.PORT || 3000));
 // routes for the home-page
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
@@ -30,6 +31,6 @@ io.on('connection', function(socket) {
 
 // when the user types in a message, the server gets it as a "chat message" event. 
 
-http.listen(3000, function() {
-    console.log('The application is running on port *:3000');
+http.listen(app.get('port'), function() {
+    console.log('The application is running on port ' + app.get('port'));
 });
